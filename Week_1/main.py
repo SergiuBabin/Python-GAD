@@ -109,6 +109,23 @@ print(my_list[2:5:2] + my_list[9:10])
 print(my_list)
 
 
+# Tik-Tak-Toe
+def print_format_game(vals):
+    print("\n")
+    print("\t     |     |")
+    print("\t  {}  |  {}  |  {}".format(vals[0], vals[1], vals[2]))
+    print('\t_____|_____|_____')
+
+    print("\t     |     |")
+    print("\t  {}  |  {}  |  {}".format(vals[3], vals[4], vals[5]))
+    print('\t_____|_____|_____')
+
+    print("\t     |     |")
+
+    print("\t  {}  |  {}  |  {}".format(vals[6], vals[7], vals[8]))
+    print("\t     |     |")
+    print("\n")
 
 
+print_format_game([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
