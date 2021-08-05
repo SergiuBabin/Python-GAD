@@ -129,3 +129,25 @@ def print_format_game(vals):
 
 print_format_game([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
+positions_groups = (
+    [[(x, y) for y in range(3)] for x in range(3)] +  # horizontals
+    [[(x, y) for x in range(3)] for y in range(3)] +  # verticals
+    [[(d, d) for d in range(3)]] +  # diagonal
+    [[(2-d, d) for d in range(3)]]  # diagonal
+)
+
+def get_winner(board):
+    for positions in positions_groups:
+        values = [board[x][y] for (x, y) in positions]
+        print(values)
+        if len(set(values)) == 1 and values[0] and values[0] != '-':
+            return values[0]
+
+board = [
+    ["X", "O", "X"],
+    ["O", "X", "X"],
+    ["X", "-", "O"],
+]
+
+# print(positions_groups)
+print(get_winner(board)) # "X"
